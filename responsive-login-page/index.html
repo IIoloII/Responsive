@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <div class="header">Meine Webseite</div>
+
+    <!-- Content (Aufgabe 2 + 4: langer Text + Login-Formular) -->
+    <div class="content">
+
+      <!-- Langer Fliesstext (Aufgabe 2) -->
+      <div class="text-block">
+        <h2>Willkommen</h2>
+        <p>
+          Das Internet hat die Art und Weise, wie wir kommunizieren, arbeiten
+          und uns informieren, grundlegend verändert. Täglich werden Milliarden
+          von Nachrichten verschickt, Dokumente geteilt und Informationen
+          abgerufen. In dieser vernetzten Welt spielt die Benutzeroberfläche
+          einer Webseite eine entscheidende Rolle: Sie ist das erste, was ein
+          Besucher wahrnimmt, und bestimmt massgeblich, ob er bleibt oder die
+          Seite wieder verlässt.
+        </p>
+        <p>
+          Gutes Webdesign verbindet Ästhetik mit Funktionalität. Klare
+          Strukturen, ausreichend Weissraum und eine konsistente Farbgebung
+          helfen dem Nutzer, sich zu orientieren. Responsives Design stellt
+          sicher, dass Inhalte auf jedem Gerät – vom Smartphone bis zum
+          Breitbildmonitor – optimal dargestellt werden. Flexbox und CSS Grid
+          sind dabei die wichtigsten Werkzeuge moderner Layouts.
+        </p>
+        <p>
+          Barrierefreiheit ist ein weiterer zentraler Aspekt: Ausreichende
+          Farbkontraste, lesbare Schriftgrössen und semantisches HTML
+          ermöglichen es auch Menschen mit eingeschränktem Sehvermögen, Inhalte
+          problemlos zu konsumieren. Gutes Webdesign ist daher immer auch
+          inklusives Design.
+        </p>
+      </div>
+
+      <!-- Login-Formular (Aufgabe 4) -->
+      <div class="login-box">
+        <h2 class="login-title">Login</h2>
+        <form class="login-form" onsubmit="return false;">
+          <label for="firstname">Vorname</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Max"
+            autocomplete="given-name"
+          />
+
+          <label for="lastname">Nachname</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Mustermann"
+            autocomplete="family-name"
+          />
+
+          <button type="submit" class="submit-btn">Absenden</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">&copy; 2024 Meine Webseite</div>
+
+  </body>
+</html>

@@ -1,0 +1,200 @@
+/* ============================================================
+   Aufgabe 1 – Layout festlegen
+   body als Flex-Container mit column-direction:
+   Header oben, Content wächst, Footer unten.
+   ============================================================ */
+
+/* Reset & Basis */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;               /* (1) Flexbox aktivieren */
+  flex-direction: column;      /* Spalten-Layout: Header → Content → Footer */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+
+  /* Aufgabe 4 – Schöner Hintergrund mit linear-gradient */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+  color: #e0e0e0;
+}
+
+/* ============================================================
+   Header & Footer
+   ============================================================ */
+.header,
+.footer {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f3460;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid #e94560;
+}
+
+.footer {
+  border-bottom: none;
+  border-top: 2px solid #e94560;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #a0a0b0;
+}
+
+/* ============================================================
+   Aufgabe 2 – Elemente einmitten
+   .content: flex-grow:1 damit es den Raum füllt,
+   Flexbox für horizontale Zentrierung,
+   padding gegen Randkleben, max-width gegen zu breite Zeilen.
+   Aufgabe 4 – .content wird auch Flex-Container für Login-Box.
+   ============================================================ */
+.content {
+  flex-grow: 1;                /* (2) Wächst und füllt den verfügbaren Raum */
+
+  /* Aufgabe 2 – Flex-Container zum Einmitten des Inhalts */
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* horizontal zentrieren */
+  gap: 2rem;
+
+  padding: 2.5rem 1.5rem;      /* Abstand zum Rand */
+  max-width: 860px;            /* Maximale Textbreite */
+  width: 100%;
+  margin: 0 auto;              /* Content-Block selbst zentrieren */
+}
+
+/* ============================================================
+   Aufgabe 3 – Farben und Schriften anpassen
+   Helle Schrift auf dunklem Hintergrund für guten Kontrast.
+   ============================================================ */
+.text-block {
+  width: 100%;
+}
+
+.text-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 0.75rem;
+}
+
+.text-block p {
+  margin-bottom: 1rem;
+  color: #c8c8d8;
+  font-size: 1rem;
+}
+
+/* ============================================================
+   Aufgabe 4 – Login-Formular
+   ============================================================ */
+
+/* Login-Kasten: border mit runden Ecken, fixe Breite */
+.login-box {
+  width: 100%;
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(233, 69, 96, 0.5);
+  border-radius: 16px;         /* Runde Ecken */
+  padding: 2rem 2rem 2.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.login-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Formularelemente untereinander mit Flexbox */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.login-form label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a0a0c0;
+  margin-top: 0.4rem;
+}
+
+.login-form input {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login-form input:focus {
+  border-color: #e94560;
+}
+
+/* Absenden-Button: Hintergrundfarbe, runde Ecken, Hover-Animation */
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #e94560;   /* Hintergrundfarbe */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 50px;         /* Runde Ecken */
+  cursor: pointer;
+
+  /* Hover-Animation mit transition */
+  transition: background-color 0.25s ease, transform 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+.submit-btn:hover {
+  background-color: #c73652;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.45);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ============================================================
+   Responsive – Smartphone
+   ============================================================ */
+@media (max-width: 480px) {
+  .header,
+  .footer {
+    height: 48px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .login-box {
+    padding: 1.5rem 1.25rem;
+  }
+}
